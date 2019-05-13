@@ -1,0 +1,28 @@
+1. Pulling a docker Image for DockerHum
+	docker pull image-name
+	e.g docker pull centos
+	 
+2. List of images 
+	docker-images
+
+3. Running a container form an Image 
+	docker run --name Your_Docker_Nick_Name -p OutPort:InPort -d ImageName
+		-p Port Mapping
+		-d Detatch (Release the shell)
+		-it Interective Mode
+		ImageName Your Image name
+		
+	e.g. docker run --name PSAR -p 1022:22 -p 1080:80 -d centos
+
+4. List of Running container
+	docker ps
+
+5. List of all container exeted or dead 
+    docker ps -a	
+
+6. Delete a container 
+	docker rm container-name
+	e.g docker rm psar
+
+7. Delete docker image-name
+   docker rmi Image_ID	
