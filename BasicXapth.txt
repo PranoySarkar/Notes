@@ -1,0 +1,15 @@
+  // Type Administrator in username textfield
+    allSupportedFormats.add(
+	new CnlCommandDocument(
+        "Type" + CnlCommandArguments.TEXT_TO_TYPE + "in" + CnlCommandArguments.ELEMENT_IDENTIFIER+ CnlCommandArguments.ELEMENT_TYPE,
+        "Type Administrator in username textfield",
+        "Types Administrator in the username textfield"));
+
+    // Type ABC in textfield following Location label
+    allSupportedFormats.add(
+	new CnlCommandDocument(
+        "Type" + CnlCommandArguments.TEXT_TO_TYPE + "in textfield/textarea"+ CnlCommandArguments.RELATIVE_COMMAND + CnlCommandArguments.RELATIVE_ELEMENT_IDENTIFIER+ CnlCommandArguments.RELATIVE_ELEMENT_TYPE,
+		
+		
+        "Type ABC in textfield following Location label",
+        "Types ABC in the textfield which follows Location label"));

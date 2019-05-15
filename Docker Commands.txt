@@ -13,6 +13,14 @@
 		ImageName Your Image name
 		
 	e.g. docker run --name PSAR -p 1022:22 -p 1080:80 -d centos
+	
+3.1 Kill a running container
+		docker kill container_id
+		e.g docker kill 314b12fec2ce
+
+4. Restart a stoppend container 
+	docker start container_id -i
+
 
 4. List of Running container
 	docker ps
@@ -25,4 +33,39 @@
 	e.g docker rm psar
 
 7. Delete docker image-name
-   docker rmi Image_ID	
+   docker rmi Image_ID
+   
+8. Delete All Images 
+    docker rmi -f $(docker images -q )
+
+8. Remove all Container (regardless of status)	
+	docker rm  -f $(docker ps --all -q )
+   
+8.  Remove all exited container
+	docker rm  -f $(docker ps --all -q -f status=exited) 
+
+9.	Remove all dead containers 
+	docker rm  -f $(docker ps --all -q -f status=dead) 
+
+9.	Remove all Created containers 
+	docker rm  -f $(docker ps --all -q -f status=created) 	
+	
+
+10. Stop Docker Service
+	 sudo service docker stop
+
+11. Run docker Service in background 
+    sudo nohup docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock &
+	
+12. Docker Commit 
+	docker commit Container_ID username/repo_name:tag
+	e.g docker commit e18148199bdc prnysarkar/ubuntu-ssh:latest
+	
+13: docker login 
+    docker login
+	
+13: Docker Push
+	docker push username/repo_name:tag
+	e.g docker push  prnysarkar/ubuntu-ssh:latest
+
+	
